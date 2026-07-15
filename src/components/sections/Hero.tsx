@@ -75,7 +75,7 @@ function CrestAside() {
   return (
     <motion.aside
       ref={asideRef}
-      className="relative hidden lg:flex items-center justify-center"
+      className="relative hidden md:flex items-center justify-center"
       onPointerMove={handlePointerMove}
       onPointerLeave={handlePointerLeave}
       initial={{ opacity: 0 }}
