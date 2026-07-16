@@ -38,6 +38,7 @@ function CrestAside() {
   const tiltY = useSpring(useMotionTemplate`${useTransform(mouseX, [-1, 1], [-8, 8])}deg`, { stiffness: 120, damping: 18, mass: 0.6 })
   const pillParallaxX = useSpring(useTransform(mouseX, [-1, 1], [-10, 10]), { stiffness: 80, damping: 18, mass: 0.6 })
   const pillParallaxY = useSpring(useTransform(mouseY, [-1, 1], [-6, 6]), { stiffness: 80, damping: 18, mass: 0.6 })
+  const pillParallaxXNeg = useTransform(pillParallaxX, (v) => -v)
 
   const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
     if (reducedMotion.current) return
@@ -176,7 +177,7 @@ function CrestAside() {
             opacity: { duration: 0.6, delay: reducedMotionState ? 0.6 : 1.3, ease: [0.16, 1, 0.3, 1] },
             y: reducedMotionState ? { duration: 0.6, delay: 1.3 } : { duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 2.2 },
           }}
-          style={{ x: reducedMotionState ? 0 : useTransform(pillParallaxX, (v) => -v), y: reducedMotionState ? 0 : pillParallaxY }}
+          style={{ x: reducedMotionState ? 0 : pillParallaxXNeg, y: reducedMotionState ? 0 : pillParallaxY }}
         >
           <Quote className="w-3.5 h-3.5 text-tan" strokeWidth={1.5} />
           <span className="text-[0.65rem] tracking-[0.18em] uppercase font-medium text-brown-dark">
