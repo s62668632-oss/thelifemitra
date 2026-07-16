@@ -185,20 +185,6 @@ export default function About() {
                   </motion.div>
                 ))}
               </div>
-
-              <motion.div
-                aria-hidden="true"
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.55 }}
-                className="mt-3.5 rounded-2xl border border-dashed border-brown-dark/15 px-4 py-3 flex items-center gap-3 bg-warm-white/40"
-              >
-                <span className="h-1.5 w-1.5 rounded-full bg-tan animate-pulse" />
-                <span className="text-[0.68rem] tracking-[0.16em] uppercase text-text-secondary">
-                  Coach portrait — placeholder · drop a real photo in <code className="text-tan">public/images/coach.jpg</code>
-                </span>
-              </motion.div>
             </div>
           </SectionReveal>
         </div>

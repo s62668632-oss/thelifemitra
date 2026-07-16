@@ -19,8 +19,10 @@ export default class ErrorBoundary extends Component<Props, State> {
     return { hasError: true, error }
   }
 
+  // ponytail: log full error + componentStack so any future iframe/storage
+  // throw is visible in the browser console instead of the generic fallback.
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    console.error('ErrorBoundary caught:', error, errorInfo)
+    console.error('[ErrorBoundary] caught:', error, '\nComponent stack:', errorInfo.componentStack)
   }
 
   render() {

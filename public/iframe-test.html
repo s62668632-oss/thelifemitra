@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>iframe-bomb reproducer</title></head>
+<body style="margin:0;background:#222">
+  <p style="color:#fff;font:13px/1.4 system-ui;padding:8px">
+    Reproducer — embedding the deployed URL. Same-origin below; for the real
+    cross-origin SecurityError, host this file on a different domain/port
+    (e.g. `npx serve -l 5500` and open http://localhost:5500/iframe-test.html).
+    The vercel dashboard preview that fails is itself cross-origin to the
+    deployed site.
+  </p>
+  <iframe
+    id="f"
+    style="width:100%;height:80vh;border:0;background:#fff"
+    src="https://lifemitra.com"
+    sandbox="allow-scripts allow-same-origin allow-forms"
+  ></iframe>
+  <script>
+    document.getElementById('f').addEventListener('load', () => {
+      try {
+        console.log('[host] innerHTML length:', document.getElementById('f')
+          .contentDocument.body.innerHTML.length);
+      } catch (e) {
+        console.log('[host] cross-origin blocked (expected):', e.message);
+      }
+    });
+    window.addEventListener('message', e => console.log('[host] msg:', e.data));
+  </script>
+</body>
+</html>
