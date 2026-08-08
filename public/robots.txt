@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lifemitra.com/sitemap.xml
+Sitemap: https://www.thelifemitra.com/sitemap.xml
