@@ -10,6 +10,7 @@ import BackToTop from './components/ui/BackToTop'
 const About = lazy(() => import('./components/sections/About'))
 const Services = lazy(() => import('./components/sections/Services'))
 const BuildLife = lazy(() => import('./components/sections/BuildLife'))
+const FAQ = lazy(() => import('./components/sections/FAQ'))
 const Contact = lazy(() => import('./components/sections/Contact'))
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
             <About />
             <Services />
             <BuildLife />
+            <FAQ />
             <Contact />
           </Suspense>
         </main>
