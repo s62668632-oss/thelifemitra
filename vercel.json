@@ -1,5 +1,44 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "rewrites": [
+    { "source": "/services/career-guidance", "destination": "/services/career-guidance/index.html" },
+    { "source": "/services/career-guidance/", "destination": "/services/career-guidance/index.html" },
+    { "source": "/services/public-speaking-coaching", "destination": "/services/public-speaking-coaching/index.html" },
+    { "source": "/services/public-speaking-coaching/", "destination": "/services/public-speaking-coaching/index.html" },
+    { "source": "/services/time-management-coaching", "destination": "/services/time-management-coaching/index.html" },
+    { "source": "/services/time-management-coaching/", "destination": "/services/time-management-coaching/index.html" },
+    { "source": "/services/stress-management-coaching", "destination": "/services/stress-management-coaching/index.html" },
+    { "source": "/services/stress-management-coaching/", "destination": "/services/stress-management-coaching/index.html" },
+    { "source": "/services/relationship-coaching", "destination": "/services/relationship-coaching/index.html" },
+    { "source": "/services/relationship-coaching/", "destination": "/services/relationship-coaching/index.html" },
+    { "source": "/services/emotional-healing-coaching", "destination": "/services/emotional-healing-coaching/index.html" },
+    { "source": "/services/emotional-healing-coaching/", "destination": "/services/emotional-healing-coaching/index.html" },
+    { "source": "/services/executive-communication-coaching", "destination": "/services/executive-communication-coaching/index.html" },
+    { "source": "/services/executive-communication-coaching/", "destination": "/services/executive-communication-coaching/index.html" },
+    { "source": "/services/law-of-attraction-coaching", "destination": "/services/law-of-attraction-coaching/index.html" },
+    { "source": "/services/law-of-attraction-coaching/", "destination": "/services/law-of-attraction-coaching/index.html" },
+    { "source": "/services/business-startup-coaching", "destination": "/services/business-startup-coaching/index.html" },
+    { "source": "/services/business-startup-coaching/", "destination": "/services/business-startup-coaching/index.html" },
+    { "source": "/services/sales-management-workshop", "destination": "/services/sales-management-workshop/index.html" },
+    { "source": "/services/sales-management-workshop/", "destination": "/services/sales-management-workshop/index.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
+      ]
+    }
+  ]
 }

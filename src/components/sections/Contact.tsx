@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react'
 import { motion } from 'framer-motion'
-import { Phone, Mail, Send, Check, AlertCircle, Instagram, Youtube, Linkedin, Sparkles, Clock } from 'lucide-react'
+import { Phone, Mail, Send, Check, AlertCircle, Instagram, Sparkles, Clock } from 'lucide-react'
 import emailjs from '@emailjs/browser'
 import SectionReveal from '../ui/SectionReveal'
 
@@ -541,9 +541,7 @@ export default function Contact() {
                 </p>
                 <div className="flex gap-2">
                   {[
-                    { platform: 'Instagram', icon: Instagram, href: 'https://instagram.com' },
-                    { platform: 'YouTube', icon: Youtube, href: 'https://youtube.com' },
-                    { platform: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com' },
+                    { platform: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/thelifemitra6' },
                   ].map(({ platform, icon: Icon, href }, i) => (
                     <motion.a
                       key={platform}

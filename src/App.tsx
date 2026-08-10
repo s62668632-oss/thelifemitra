@@ -1,23 +1,30 @@
-import { useEffect, Suspense, lazy } from 'react'
+import { useEffect } from 'react'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
-import Hero from './components/sections/Hero'
 import Footer from './components/sections/Footer'
 import ScrollProgress from './components/ui/ScrollProgress'
 import ErrorBoundary from './components/ui/ErrorBoundary'
 import WhatsAppButton from './components/ui/WhatsAppButton'
 import BackToTop from './components/ui/BackToTop'
+import HomePage from './pages/HomePage'
+import ServicePage from './pages/ServicePage'
+import { scrollToHashWhenReady, scrollToTop } from './lib/scroll'
 
-const About = lazy(() => import('./components/sections/About'))
-const Services = lazy(() => import('./components/sections/Services'))
-const BuildLife = lazy(() => import('./components/sections/BuildLife'))
-const FAQ = lazy(() => import('./components/sections/FAQ'))
-const Contact = lazy(() => import('./components/sections/Contact'))
+function RouteChangeHandler() {
+  const location = useLocation()
+
+  useEffect(() => {
+    if (location.hash) {
+      scrollToHashWhenReady(location.hash.slice(1))
+    } else {
+      scrollToTop()
+    }
+  }, [location.pathname, location.hash])
+
+  return null
+}
 
 function App() {
-  useEffect(() => {
-    document.title = 'Life Mitra — Real Conversations. Real Growth.'
-  }, [])
-
   return (
     <ErrorBoundary>
       <a
@@ -31,16 +38,13 @@ function App() {
 
         <ScrollProgress />
         <Navbar />
+        <RouteChangeHandler />
 
         <main id="main-content" tabIndex={-1}>
-          <Hero />
-          <Suspense fallback={<div className="h-screen" />}>
-            <About />
-            <Services />
-            <BuildLife />
-            <FAQ />
-            <Contact />
-          </Suspense>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/services/:slug" element={<ServicePage />} />
+          </Routes>
         </main>
         <Footer />
         <BackToTop />

@@ -1,39 +1,44 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { Compass, Mic, MessageSquare, Clock, Brain, Heart, Lightbulb, Rocket, BarChart3, Phone, Check, ArrowRight } from 'lucide-react'
 import SectionReveal, { StaggerItem } from '../ui/SectionReveal'
 import { scrollToSection } from '../../lib/scroll'
 
 const services = [
-  { icon: Compass, title: 'Career Guidance', desc: 'Find clarity and direction in your professional journey.', features: ['Personalized assessment', 'Action roadmap', 'Follow-up support'] },
-  { icon: Mic, title: 'Public Speaking', desc: 'Develop confidence and impact in front of any audience.', features: ['Voice modulation techniques', 'Stage presence training', 'Real-world practice'] },
-  { icon: Clock, title: 'Time Management', desc: 'Build structure, consistency, and discipline in daily life.', features: ['Priority frameworks', 'Productivity systems', 'Habit building'] },
-  { icon: Brain, title: 'Stress Management', desc: 'Learn practical techniques to manage pressure and anxiety.', features: ['Mindfulness practices', 'Coping strategies', 'Resilience building'] },
-  { icon: Heart, title: 'Relationship Coaching', desc: 'Strengthen connections and build healthier relationships.', features: ['Communication skills', 'Conflict resolution', 'Trust building'] },
-  { icon: Lightbulb, title: 'Emotional Healing', desc: 'Release emotional blocks and restore inner peace.', features: ['Guided reflection', 'Healing techniques', 'Inner peace practices'] },
+  { icon: Compass, title: 'Career Guidance', slug: 'career-guidance', desc: 'Find clarity and direction in your professional journey.', features: ['Personalized assessment', 'Action roadmap', 'Follow-up support'] },
+  { icon: Mic, title: 'Public Speaking', slug: 'public-speaking-coaching', desc: 'Develop confidence and impact in front of any audience.', features: ['Voice modulation techniques', 'Stage presence training', 'Real-world practice'] },
+  { icon: Clock, title: 'Time Management', slug: 'time-management-coaching', desc: 'Build structure, consistency, and discipline in daily life.', features: ['Priority frameworks', 'Productivity systems', 'Habit building'] },
+  { icon: Brain, title: 'Stress Management', slug: 'stress-management-coaching', desc: 'Learn practical techniques to manage pressure and anxiety.', features: ['Mindfulness practices', 'Coping strategies', 'Resilience building'] },
+  { icon: Heart, title: 'Relationship Coaching', slug: 'relationship-coaching', desc: 'Strengthen connections and build healthier relationships.', features: ['Communication skills', 'Conflict resolution', 'Trust building'] },
+  { icon: Lightbulb, title: 'Emotional Healing', slug: 'emotional-healing-coaching', desc: 'Release emotional blocks and restore inner peace.', features: ['Guided reflection', 'Healing techniques', 'Inner peace practices'] },
 ]
 
 const popularSessions = [
   {
     icon: MessageSquare,
     title: 'Executive Communication',
+    slug: 'executive-communication-coaching',
     desc: 'Master the art of clear, powerful communication.',
     features: ['Leadership messaging', 'Boardroom strategies', 'Executive presence'],
   },
   {
     icon: Lightbulb,
     title: 'Law of Attraction',
+    slug: 'law-of-attraction-coaching',
     desc: 'Harness the power of mindset to attract what you desire.',
     features: ['Mindset transformation', 'Visualization mastery', 'Manifestation frameworks', 'Personal mentoring'],
   },
   {
     icon: Rocket,
     title: 'Business Startup Coaching',
+    slug: 'business-startup-coaching',
     desc: 'From idea to execution — build your business with confidence.',
     features: ['Business model design', 'Market validation', 'Launch strategy', 'Growth planning'],
   },
   {
     icon: BarChart3,
     title: 'Sales Management Workshop',
+    slug: 'sales-management-workshop',
     desc: 'Practical strategies to elevate your sales performance.',
     features: ['Sales psychology', 'Pipeline management', 'Closing techniques', 'Team leadership'],
   },
@@ -76,7 +81,9 @@ export default function Services() {
                   <service.icon className="w-5 h-5 text-brown-light group-hover:text-cream group-hover:scale-110 transition-all duration-500" />
                 </div>
                 <h3 className="font-display text-base sm:text-[1.05rem] font-medium text-brown-dark mb-1.5 sm:mb-2">
-                  {service.title}
+                  <Link to={`/services/${service.slug}`} className="hover:text-tan transition-colors duration-300">
+                    {service.title}
+                  </Link>
                 </h3>
                 <p className="text-sm text-text-secondary/70 font-light leading-relaxed mb-4 flex-grow">
                   {service.desc}
@@ -90,6 +97,13 @@ export default function Services() {
                       </li>
                     ))}
                   </ul>
+                  <Link
+                    to={`/services/${service.slug}`}
+                    className="inline-flex items-center gap-1.5 text-xs sm:text-[0.8rem] font-medium text-tan hover:text-brown-dark transition-colors duration-300 mb-3"
+                  >
+                    Learn more
+                    <ArrowRight className="w-3 h-3" />
+                  </Link>
                   <button
                     onClick={() => scrollToSection('#contact')}
                     className="w-full inline-flex items-center justify-center gap-2 px-4 py-3.5 bg-brown-dark/5 text-brown-dark text-xs sm:text-[0.8rem] font-medium rounded-lg border border-brown-dark/10 hover:bg-brown-dark hover:text-cream hover:border-brown-dark hover:shadow-md transition-all duration-300"
@@ -145,7 +159,9 @@ export default function Services() {
                     </div>
 
                     <h4 className="font-display text-lg sm:text-[1.15rem] font-medium text-cream mb-1.5 sm:mb-2">
-                      {session.title}
+                      <Link to={`/services/${session.slug}`} className="hover:text-tan transition-colors duration-300">
+                        {session.title}
+                      </Link>
                     </h4>
                     <p className="text-sm text-cream/55 font-light leading-relaxed mb-5">
                       {session.desc}
@@ -160,6 +176,14 @@ export default function Services() {
                           </li>
                         ))}
                       </ul>
+
+                      <Link
+                        to={`/services/${session.slug}`}
+                        className="inline-flex items-center gap-1.5 text-xs sm:text-[0.75rem] font-medium text-tan hover:text-cream transition-colors duration-300 mb-3"
+                      >
+                        Learn more
+                        <ArrowRight className="w-3 h-3" />
+                      </Link>
 
                       <button
                         onClick={() => scrollToSection('#contact')}

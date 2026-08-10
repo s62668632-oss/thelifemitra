@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { scrollToSection } from '../lib/scroll'
 
 const sectionIds = ['home', 'about', 'services', 'contact']
@@ -21,6 +22,9 @@ export default function Navbar() {
   const mobileMenuRef = useRef<HTMLDivElement>(null)
   const firstLinkRef = useRef<HTMLAnchorElement>(null)
   const hamburgerRef = useRef<HTMLButtonElement>(null)
+  const navigate = useNavigate()
+  const location = useLocation()
+  const isHome = location.pathname === '/'
 
   const handleScroll = useCallback(() => {
     const currentY = window.scrollY
@@ -93,8 +97,12 @@ export default function Navbar() {
   const handleNavClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault()
     setMobileOpen(false)
-    scrollToSection(href)
-  }, [])
+    if (isHome) {
+      scrollToSection(href)
+    } else {
+      navigate(`/${href}`)
+    }
+  }, [isHome, navigate])
 
   const handleMobileKeyDown = useCallback((e: React.KeyboardEvent) => {
     if (e.key === 'Escape') {
@@ -150,7 +158,7 @@ export default function Navbar() {
 
             <ul className="hidden lg:flex items-center gap-1">
               {navLinks.map((link) => {
-                const isActive = activeSection === link.href.slice(1)
+                const isActive = isHome && activeSection === link.href.slice(1)
                 return (
                   <li key={link.href}>
                     <a
@@ -255,9 +263,9 @@ export default function Navbar() {
                     href={link.href}
                     onClick={(e) => handleNavClick(e, link.href)}
                     ref={i === 0 ? firstLinkRef : undefined}
-                    aria-current={activeSection === link.href.slice(1) ? 'page' : undefined}
+                    aria-current={isHome && activeSection === link.href.slice(1) ? 'page' : undefined}
                     className={`font-display text-3xl sm:text-4xl px-6 py-3 rounded-2xl transition-all duration-300 ease-expo-out min-w-[200px] text-center ${
-                      activeSection === link.href.slice(1)
+                      isHome && activeSection === link.href.slice(1)
                         ? 'text-cream bg-brown-dark'
                         : 'text-brown-dark/80 hover:bg-brown-dark/5'
                     }`}

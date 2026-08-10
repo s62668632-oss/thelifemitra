@@ -8,15 +8,15 @@
   <meta name="theme-color" content="#F9F6F1" />
   <meta name="author" content="Sachin Chindarkar" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://www.thelifemitra.com" />
+  <link rel="canonical" href="https://www.thelifemitra.com/" />
   <link rel="icon" type="image/png" href="/favicon.png" sizes="48x48" />
   <link rel="alternate icon" href="/logo.png" type="image/png" sizes="240x80" />
 
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.thelifemitra.com" />
+  <meta property="og:url" content="https://www.thelifemitra.com/" />
   <meta property="og:title" content="The Life Mitra — Real Conversations. Real Growth." />
   <meta property="og:description" content="The Life Mitra — life coaching by Sachin Chindarkar. Helping you overcome confusion, self-doubt, and lack of purpose with real conversations, real growth, and real transformation." />
-  <meta property="og:image" content="/og-image.png" />
+  <meta property="og:image" content="https://www.thelifemitra.com/og-image.png" />
   <meta property="og:site_name" content="The Life Mitra" />
   <meta property="og:locale" content="en_IN" />
 
@@ -36,6 +36,7 @@
   {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": "https://www.thelifemitra.com/#person",
     "name": "Sachin Chindarkar",
     "url": "https://www.thelifemitra.com",
     "jobTitle": "Life Coach",
@@ -48,6 +49,7 @@
       "addressRegion": "Maharashtra",
       "addressCountry": "IN"
     },
+    "worksFor": { "@id": "https://www.thelifemitra.com/#business" },
     "sameAs": [
       "https://www.instagram.com/thelifemitra6"
     ]
@@ -57,12 +59,14 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "ProfessionalService",
+    "@id": "https://www.thelifemitra.com/#business",
     "name": "The Life Mitra",
     "description": "Professional life coaching services helping you build the life you actually want.",
     "url": "https://www.thelifemitra.com",
     "telephone": "+91-8097945878",
     "email": "info.Thelifemitra@gmail.com",
+    "founder": { "@id": "https://www.thelifemitra.com/#person" },
     "sameAs": [
       "https://www.instagram.com/thelifemitra6"
     ],
@@ -72,47 +76,33 @@
       "addressRegion": "Maharashtra",
       "addressCountry": "IN"
     },
+    "areaServed": [
+      { "@type": "City", "name": "Mumbai" },
+      { "@type": "City", "name": "Pune" }
+    ],
     "priceRange": "₹₹₹",
-
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
       "opens": "09:00",
       "closes": "18:00"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "The Life Mitra Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Career Guidance", "description": "Find clarity and direction in your professional journey.", "url": "https://www.thelifemitra.com/services/career-guidance", "provider": { "@id": "https://www.thelifemitra.com/#business" } } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Public Speaking", "description": "Develop confidence and impact in front of any audience.", "url": "https://www.thelifemitra.com/services/public-speaking-coaching", "provider": { "@id": "https://www.thelifemitra.com/#business" } } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Time Management", "description": "Build structure, consistency, and discipline in daily life.", "url": "https://www.thelifemitra.com/services/time-management-coaching", "provider": { "@id": "https://www.thelifemitra.com/#business" } } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Stress Management", "description": "Learn practical techniques to manage pressure and anxiety.", "url": "https://www.thelifemitra.com/services/stress-management-coaching", "provider": { "@id": "https://www.thelifemitra.com/#business" } } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Relationship Coaching", "description": "Strengthen connections and build healthier relationships.", "url": "https://www.thelifemitra.com/services/relationship-coaching", "provider": { "@id": "https://www.thelifemitra.com/#business" } } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Emotional Healing", "description": "Release emotional blocks and restore inner peace.", "url": "https://www.thelifemitra.com/services/emotional-healing-coaching", "provider": { "@id": "https://www.thelifemitra.com/#business" } } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Executive Communication", "description": "Master the art of clear, powerful communication.", "url": "https://www.thelifemitra.com/services/executive-communication-coaching", "provider": { "@id": "https://www.thelifemitra.com/#business" } } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Law of Attraction", "description": "Harness the power of mindset to attract what you desire.", "url": "https://www.thelifemitra.com/services/law-of-attraction-coaching", "provider": { "@id": "https://www.thelifemitra.com/#business" } } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Business Startup Coaching", "description": "From idea to execution — build your business with confidence.", "url": "https://www.thelifemitra.com/services/business-startup-coaching", "provider": { "@id": "https://www.thelifemitra.com/#business" } } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sales Management Workshop", "description": "Practical strategies to elevate your sales performance.", "url": "https://www.thelifemitra.com/services/sales-management-workshop", "provider": { "@id": "https://www.thelifemitra.com/#business" } } }
+      ]
     }
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://www.thelifemitra.com/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "About",
-        "item": "https://www.thelifemitra.com/#about"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "Services",
-        "item": "https://www.thelifemitra.com/#services"
-      },
-      {
-        "@type": "ListItem",
-        "position": 4,
-        "name": "Contact",
-        "item": "https://www.thelifemitra.com/#contact"
-      }
-    ]
   }
   </script>
 
@@ -159,108 +149,6 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Most clients see meaningful progress in 8-12 sessions. Some continue monthly for ongoing support, while others achieve their goals and transition to self-guided growth. It's entirely up to your pace and needs."
-        }
-      }
-    ]
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "name": "The Life Mitra Services",
-    "url": "https://www.thelifemitra.com/#services",
-    "numberOfItems": "10",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "item": {
-          "@type": "Service",
-          "name": "Career Guidance",
-          "description": "Find clarity and direction in your professional journey."
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "item": {
-          "@type": "Service",
-          "name": "Public Speaking",
-          "description": "Develop confidence and impact in front of any audience."
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "item": {
-          "@type": "Service",
-          "name": "Time Management",
-          "description": "Build structure, consistency, and discipline in daily life."
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 4,
-        "item": {
-          "@type": "Service",
-          "name": "Stress Management",
-          "description": "Learn practical techniques to manage pressure and anxiety."
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 5,
-        "item": {
-          "@type": "Service",
-          "name": "Relationship Coaching",
-          "description": "Strengthen connections and build healthier relationships."
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 6,
-        "item": {
-          "@type": "Service",
-          "name": "Emotional Healing",
-          "description": "Release emotional blocks and restore inner peace."
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 7,
-        "item": {
-          "@type": "Service",
-          "name": "Executive Communication",
-          "description": "Master the art of clear, powerful communication."
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 8,
-        "item": {
-          "@type": "Service",
-          "name": "Law of Attraction",
-          "description": "Harness the power of mindset to attract what you desire."
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 9,
-        "item": {
-          "@type": "Service",
-          "name": "Business Startup Coaching",
-          "description": "From idea to execution — build your business with confidence."
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 10,
-        "item": {
-          "@type": "Service",
-          "name": "Sales Management Workshop",
-          "description": "Practical strategies to elevate your sales performance."
         }
       }
     ]

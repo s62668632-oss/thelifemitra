@@ -107,7 +107,7 @@
 
   .btn-primary {
     @apply inline-flex items-center justify-center gap-2.5;
-    @apply px-6 sm:px-7 py-3 sm:py-3.5 bg-brown-dark text-cream;
+    @apply px-6 sm:px-7 py-3.5 bg-brown-dark text-cream;
     @apply text-[0.7rem] sm:text-[0.75rem] font-medium tracking-[0.06em] uppercase rounded-full;
     @apply border border-brown-dark;
     @apply transition-all duration-400 ease-expo-out;
@@ -122,7 +122,7 @@
 
   .btn-warm {
     @apply inline-flex items-center justify-center gap-2.5;
-    @apply px-6 sm:px-7 py-3 sm:py-3.5 bg-tan text-brown-dark;
+    @apply px-6 sm:px-7 py-3.5 bg-tan text-brown-dark;
     @apply text-[0.7rem] sm:text-[0.75rem] font-medium tracking-[0.06em] uppercase rounded-full;
     @apply border border-tan;
     @apply transition-all duration-400 ease-expo-out;
@@ -138,7 +138,7 @@
 
   .btn-secondary {
     @apply inline-flex items-center justify-center gap-2.5;
-    @apply px-6 sm:px-7 py-3 sm:py-3.5 bg-transparent text-brown-dark;
+    @apply px-6 sm:px-7 py-3.5 bg-transparent text-brown-dark;
     @apply text-[0.7rem] sm:text-[0.75rem] font-medium tracking-[0.06em] uppercase rounded-full;
     border: 1px solid rgba(46, 31, 22, 0.12);
     @apply transition-all duration-400 ease-expo-out;

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
-import { ArrowUp, Phone, Mail, MapPin, Instagram, Youtube, Linkedin, MessageCircle } from 'lucide-react'
+import { ArrowUp, Phone, Mail, MapPin, Instagram, MessageCircle } from 'lucide-react'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { scrollToSection, scrollToTop } from '../../lib/scroll'
 
 const navLinks = [
@@ -9,15 +10,20 @@ const navLinks = [
 ]
 
 const socialLinks = [
-  { platform: 'Instagram', icon: Instagram, href: 'https://instagram.com' },
-  { platform: 'YouTube', icon: Youtube, href: 'https://youtube.com' },
-  { platform: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com' },
+  { platform: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/thelifemitra6' },
 ]
 
 export default function Footer() {
+  const navigate = useNavigate()
+  const location = useLocation()
+
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault()
-    scrollToSection(href)
+    if (location.pathname === '/') {
+      scrollToSection(href)
+    } else {
+      navigate(`/${href}`)
+    }
   }
 
   return (
@@ -139,7 +145,7 @@ export default function Footer() {
               Real change starts with one real conversation.
             </p>
             <motion.button
-              onClick={() => scrollToSection('#contact')}
+              onClick={() => (location.pathname === '/' ? scrollToSection('#contact') : navigate('/#contact'))}
               className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 sm:px-6 py-3 bg-tan text-brown-dark text-[0.7rem] font-medium tracking-[0.1em] uppercase rounded-full hover:bg-cream transition-colors duration-300"
               whileHover={{ y: -2, boxShadow: '0 12px 30px -8px rgba(184, 151, 106, 0.4)' }}
               whileTap={{ scale: 0.98 }}

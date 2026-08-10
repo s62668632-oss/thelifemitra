@@ -68,7 +68,7 @@ export default function About() {
             <SectionReveal delay={0.15}>
               <div className="space-y-4 sm:space-y-5 text-text-secondary font-light leading-relaxed text-[0.92rem] sm:text-[0.98rem] md:text-[1.05rem] mb-6 sm:mb-8">
                 <p>
-                  I am <span className="text-brown-dark font-medium">Mr. SM Chindarkar</span> — founder of{' '}
+                  I am <span className="text-brown-dark font-medium">Mr. Sachin Chindarkar</span> — founder of{' '}
                   <span className="text-brown-dark font-medium">The Life Mitra</span>. With grace and a few lucky breaks,
                   people know me as a multifaceted coach: vocal stylist, communicator, and lifestyle mentor.
                 </p>
@@ -81,8 +81,9 @@ export default function About() {
                   Engineering and MBA by qualification —{' '}
                   <span className="text-brown-dark font-medium">Mahindra & Mahindra</span>,{' '}
                   <span className="text-brown-dark font-medium">Godrej Aerospace</span>, and a handful of
-                  Swiss & US MNCs along the way — followed by a <em>certified life coaching</em>{' '}
-                  practice and continued study in psychology, voice, body language, and behaviour.
+                  Swiss & US MNCs along the way — followed by <em>years of hands-on coaching, training,
+                  and mentoring</em>, alongside continued self-study in psychology, voice, body language,
+                  and behaviour.
                 </p>
                 <p className="text-brown-dark/85 font-normal border-l-2 border-tan/40 pl-4 sm:pl-5 italic">
                   "Throughout my career, the privilege has been the same: helping people move from{' '}
@@ -143,7 +144,7 @@ export default function About() {
                 <div className="relative mt-7 pt-5 border-t border-cream/10 flex items-end justify-between gap-3">
                   <div>
                     <div className="font-display italic text-[1.15rem] text-cream leading-none">
-                      SM Chindarkar
+                      Sachin Chindarkar
                     </div>
                     <div className="text-[0.68rem] tracking-[0.18em] uppercase text-tan/70 mt-1.5">
                       Founder · Life Mitra

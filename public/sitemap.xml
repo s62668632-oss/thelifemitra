@@ -5,8 +5,46 @@
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
     <loc>https://www.thelifemitra.com/</loc>
-    <lastmod>2026-08-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-08-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.thelifemitra.com/services/career-guidance</loc>
+    <lastmod>2026-08-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.thelifemitra.com/services/public-speaking-coaching</loc>
+    <lastmod>2026-08-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.thelifemitra.com/services/time-management-coaching</loc>
+    <lastmod>2026-08-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.thelifemitra.com/services/stress-management-coaching</loc>
+    <lastmod>2026-08-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.thelifemitra.com/services/relationship-coaching</loc>
+    <lastmod>2026-08-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.thelifemitra.com/services/emotional-healing-coaching</loc>
+    <lastmod>2026-08-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.thelifemitra.com/services/executive-communication-coaching</loc>
+    <lastmod>2026-08-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.thelifemitra.com/services/law-of-attraction-coaching</loc>
+    <lastmod>2026-08-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.thelifemitra.com/services/business-startup-coaching</loc>
+    <lastmod>2026-08-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.thelifemitra.com/services/sales-management-workshop</loc>
+    <lastmod>2026-08-10</lastmod>
   </url>
 </urlset>
