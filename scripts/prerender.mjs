@@ -12,6 +12,7 @@
 // the Vercel build/deploy is never blocked by this.
 
 import { chromium } from 'playwright'
+import sparticuzChromium from '@sparticuz/chromium'
 import { createServer } from 'node:http'
 import { readFile, writeFile, mkdir, stat } from 'node:fs/promises'
 import path from 'node:path'
@@ -48,6 +49,21 @@ const MIME = {
   '.txt': 'text/plain',
   '.ico': 'image/x-icon',
   '.webmanifest': 'application/manifest+json',
+}
+
+// Vercel's build machine lacks the system NSS/NSPR libraries Playwright's
+// own downloaded Chromium needs (it isn't a fully-supported Playwright OS),
+// so on Vercel we launch the statically-bundled binary from
+// @sparticuz/chromium instead, which ships its own shared libraries.
+async function launchBrowser() {
+  if (process.env.VERCEL) {
+    return chromium.launch({
+      executablePath: await sparticuzChromium.executablePath(),
+      args: sparticuzChromium.args,
+      headless: true,
+    })
+  }
+  return chromium.launch()
 }
 
 async function fileExists(p) {
@@ -101,7 +117,7 @@ async function run() {
   const { port } = server.address()
   const baseUrl = `http://127.0.0.1:${port}`
 
-  const browser = await chromium.launch()
+  const browser = await launchBrowser()
   const context = await browser.newContext()
   await context.route('**/*', (route) => {
     // Block outbound network calls (fonts, analytics, EmailJS) during
