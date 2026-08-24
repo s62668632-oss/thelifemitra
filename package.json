@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "vite build && node scripts/prerender.mjs",
     "preview": "vite preview",
+    "seo:submit": "node scripts/indexnow.mjs",
     "postinstall": "node scripts/postinstall.mjs"
   },
   "dependencies": {
